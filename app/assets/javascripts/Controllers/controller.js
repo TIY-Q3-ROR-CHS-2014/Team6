@@ -37,22 +37,16 @@ angular.module("menuModule")
          };
 
 
-  //   $rootScope.$on("item:deleted", function () {
-  //     menuSvc.getMenus().then(function (menus) {
-  //       $scope.menus = menus.data;
-  //       $route.reload();
-  //     });
-  // });
-  //
-  //   $rootScope.$on("item:added", function () {
-  //     menuSvc.getMenus().then(function (menus) {
-  //       $scope.menus = menus.data;
-  //     });
-  // });
-  //
-  //   $rootScope.$on("item:added", function () {
-  //     menuSvc.getMsgs().then(function (items) {
-  //       $scope.msgs = msgs.data.reverse();
-  //   });
-  // });
+    $rootScope.$on("item:deleted", function () {
+      menuSvc.getItems().then(function (items) {
+        $scope.items = items.data;
+        $route.reload();
+      });
+  });
+
+    $rootScope.$on("item:added", function () {
+      menuSvc.getItems().then(function (items) {
+        $scope.items = items.data.reverse();
+      });
+  });
 });
