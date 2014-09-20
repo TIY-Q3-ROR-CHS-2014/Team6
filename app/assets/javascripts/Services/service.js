@@ -81,6 +81,42 @@ angular.module("menuModule")
             })
         };
 
+    ///////items2
+        var items2 = "/menus/2/items";
+
+        var getItems2 = function(){
+          return $http.get(items2) ;
+        };
+
+        // var singleItem = function(id) {
+        //    return $http.get(items + "/" + id);
+        // };
+
+        var createItem2 = function(item2) {
+          return $http.post(items2, item).then(function (response) {
+                $rootScope.$broadcast("item2:added");
+                $log.info("item2:added");
+            })
+        };
+
+        var deleteItem2 = function(item2) {
+          console.log(item2);
+          return $http.delete("/menus/" + item2.menu_id + "/items2/" + item2.id, item).then(function (response) {
+                console.log(response);
+                $rootScope.$broadcast("item2:deleted");
+                $log.info("item2:deleted");
+            })
+        };
+
+        var editItem2 = function(item2) {
+          return $http.put("/menus/" + item2.menu_id + "/items2/" + item2.id, item).then(function (response) {
+                $rootScope.$broadcast("item2:updated");
+                $log.info("item2:updated");
+            })
+        };
+
+        ///////////////////////
+
         return {
           getRests: getRests,
 
@@ -90,7 +126,10 @@ angular.module("menuModule")
           deleteItem: deleteItem,
           editItem: editItem,
           //items2
-
+          getItems2: getItems2,
+          addItem2: createItem2,
+          deleteItem2: deleteItem2,
+          editItem2: editItem2,
           //items3
 
           //items4

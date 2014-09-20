@@ -1,15 +1,19 @@
-<div class="mccradysWrap">
 
-  <div class="infoMccradys">
-        <h1>{{rests[2].title}}</h1>
-        <h4>{{rests[2].phone}}</h4>
-        <h4>{{rests[2].address}}</h4>
-        <h4><a href="{{rests[2].site}}">{{rests[2].site}}</a></h4>
+<div class="mccradysWrap" ng-repeat="rest in rests">
+
+<div class="info">
+    <h1>{{rests[2].title}}</h1>
+    <h4>{{rests[2].phone}}</h4>
+    <h4>{{rests[2].address}}</h4>
+    <h4><a href="{{rests[2].site}}">{{rests[2].site}}</a></h4>
+</div>
+<input class="menuSearch" type="text" ng-model="search" placeholder="Search menu items">
+<div class="menuWrap">
+<div class="menu col-md-8 col-md-offset-2 clr">
+    <div class="col-xs-12" ng-class-odd="'odd'" ng-repeat="item in items2 | filter: search">
+    {{item.name}} <p>Wine pairing: <span>{{item.description}}</span></p>
+
     </div>
-
-    <div class="menu col-xs-10, col-xs-offset-2">
-    </div>
-
-
-
+</div>
+</div>
 </div>

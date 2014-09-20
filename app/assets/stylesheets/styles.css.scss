@@ -226,6 +226,27 @@ nav {
     text-shadow: black 0 2px 3px;
 }
 
+///////MCCRADYS
+
+.mccradysWrap {
+    width:100%; height:100%;
+    position:fixed;
+    text-align:center;
+    background-image:url("http://mccradysrestaurant.com/wp-content/uploads/2014/05/Slide1-e1399399594795.jpg");
+    background-size:100% 100%;
+    text-shadow: black 0 2px 3px;
+    p {
+        font-weight:bold;
+    }
+    span {
+        font-weight:normal;
+        float:none;
+    }
+
+    }
+
+
+
 /////////admin
 
 .admin {
